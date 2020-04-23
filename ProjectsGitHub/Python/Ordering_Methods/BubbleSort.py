@@ -1,21 +1,15 @@
-def bubbleSort(n, vet):
-    stop = 0
-    end = n
-    while stop == 0:
-        stop = 1
-        for i in range(end-1):
+def bubbleSort(vet):
+    for numpass in range(len(vet)-1, 0, -1):
+        for i in range(numpass):
             if vet[i] > vet[i+1]:
-                vet[i], vet[i+1] = vet[i+1], vet[i] 
-                stop = 0
+                vet[i], vet[i+1] = vet[i+1], vet[i]
 
-        end-= 1
 
 #n é o tamanho do vetor
-n = 5
+n = 10
 vet = []
 for i in range(n):
-    vet.append(input('Type a number: '))
-bubbleSort(n, vet)      
+    vet.append(int(input('Type a number: ')))
 
-for i in range(n):
-        print(vet[i])
+bubbleSort(vet)    
+print(vet)
