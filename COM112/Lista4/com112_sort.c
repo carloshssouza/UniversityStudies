@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "com112_sort.h"
-#define n 15
+
 
 //Função para o método Selection Sort
-void selectionSort(int *V, int *n_compara, int *n_movimento){
+void selectionSort(int *V, int *n_compara, int *n_movimento, int n){
     int menor;
     int troca;
 
@@ -29,7 +29,7 @@ void selectionSort(int *V, int *n_compara, int *n_movimento){
 }
 
 //Função para o método Bubble Sort
-void bubbleSort(int *V, int *n_compara, int *n_movimento){
+void bubbleSort(int *V, int *n_compara, int *n_movimento, int n){
     int aux;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n-1-i; j++){
@@ -48,7 +48,7 @@ void bubbleSort(int *V, int *n_compara, int *n_movimento){
 }
 
 //Função para o método Inserction Sort
-void insertionSort(int *V, int *n_compara, int *n_movimento){
+void insertionSort(int *V, int *n_compara, int *n_movimento, int n){
     int aux;
     int j;
     for(int i = 0; i < n; i++){

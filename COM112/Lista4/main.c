@@ -3,18 +3,23 @@
 #include <time.h>
 #include "com112_file.h"
 #include "com112_sort.h"
-#define n 15
+
 
 //Função para apresentar o menu de opções
 int menu();
 
 //Função que imprimi na tela tempo de execução, nª de comparações e nº de movimentações
-int relatorio(double tempo, int n_compara, int n_movimento, int *V2);
+int relatorio(double tempo, int n_compara, int n_movimento, int *V2, int n);
 
 
 int main() {
     //declarando variável para o calculo do tempo de execução em milissegundos
     clock_t c1, c2;
+
+    //definindo a quantiadade de elementos
+    int n;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &n);
 
     //Alocando memória para o vetor de entrada(V) e para o (V2) que vai receber os valores ordenados
     int *V = (int*)malloc(n * sizeof(int));
@@ -35,10 +40,11 @@ int main() {
     srand(time(NULL));
     for(int i = 0; i < n; i++){
         V[i] = rand() % n + 1;
+        printf("%d\n", V[i]);
     }
 
     //Criando o arquivo de entrada com112_entrada.txt onde ficará registrado os elementos do vetor
-    fileEntrada(V);
+    fileEntrada(V, n);
 
     //Usando do while para repetir o print do menu e poder selecionar as opções
     do{
@@ -59,11 +65,11 @@ int main() {
                 //se o marcador for 0, entrará no if, se não for igual a 0, é porque já foi usado esse método
                 if(marcador_B == 0) {
                     //fazendo a leitura do arquivo de entrada com112_entrada.txt e colocando em um vetor 2
-                    fileLeitura(V2);
+                    fileLeitura(V2, n);
 
                     //c1 e c2 usados para calcular o tempo de execução do método de ordenação e chamando a função
                     c1 = clock();
-                    bubbleSort(V2, &n_compara, &n_movimento);
+                    bubbleSort(V2, &n_compara, &n_movimento, n);
                     c2 = clock();
                     tempo = (double) (c2 - c1) * 1000 / CLOCKS_PER_SEC;
 
@@ -71,7 +77,7 @@ int main() {
                     fileBubble(tempo, n_compara, n_movimento);
 
                     //imprimindo na tela o resultado
-                    ok = relatorio(tempo, n_compara, n_movimento, V2);
+                    ok = relatorio(tempo, n_compara, n_movimento, V2, n);
 
                     //somando no marcador, para não repetir o mesmo método de ordenação, já que daria o mesmo resultado
                     marcador_B++;
@@ -83,13 +89,13 @@ int main() {
 
             case 2:
                 if(marcador_S == 0) {
-                    fileLeitura(V2);
+                    fileLeitura(V2, n);
                     c1 = clock();
-                    selectionSort(V2, &n_compara, &n_movimento);
+                    selectionSort(V2, &n_compara, &n_movimento, n);
                     c2 = clock();
                     tempo = (double) (c2 - c1) * 1000 / CLOCKS_PER_SEC;
                     fileSelection(tempo, n_compara, n_movimento);
-                    ok = relatorio(tempo, n_compara, n_movimento, V2);
+                    ok = relatorio(tempo, n_compara, n_movimento, V2, n);
                     marcador_S++;
                 } else{
                     printf("Elementos ja ordenados por Selection Sort\n");
@@ -99,13 +105,13 @@ int main() {
 
             case 3:
                 if(marcador_I == 0) {
-                    fileLeitura(V2);
+                    fileLeitura(V2, n);
                     c1 = clock();
-                    insertionSort(V2, &n_compara, &n_movimento);
+                    insertionSort(V2, &n_compara, &n_movimento, n);
                     c2 = clock();
                     tempo = (double) (c2 - c1) * 1000 / CLOCKS_PER_SEC;
                     fileInsertion(tempo, n_compara, n_movimento);
-                    ok = relatorio(tempo, n_compara, n_movimento, V2);
+                    ok = relatorio(tempo, n_compara, n_movimento, V2, n);
                     marcador_I++;
                 } else{
                     printf("Elementos ja ordenados por Selection Sort\n");
@@ -119,7 +125,7 @@ int main() {
     }while(op > 0 && op < 4);
 
     //Passando os elementos ordenados para com112_saida.txt
-    fileSaida(V2);
+    fileSaida(V2, n);
     printf("Finalizando...\n");
     free(V);
     free(V2);
@@ -136,13 +142,11 @@ int menu(){
     printf("4 - Sair\n");
     scanf("%d", &op);
 
-
     return op;
 }
 
 //Função para imprimir
-int relatorio(double tempo, int n_compara, int n_movimento, int *V2){
-
+int relatorio(double tempo, int n_compara, int n_movimento, int *V2, int n){
     printf("\n1. Tempo de execucao: %lf\n", tempo);
     printf("2. Numero de comparacoes: %d\n", n_compara);
     printf("3. Numero de movimentacoes entre elementos do vetor: %d\n\n", n_movimento);
@@ -152,5 +156,4 @@ int relatorio(double tempo, int n_compara, int n_movimento, int *V2){
     printf("\n\n");
 
     return 1;
-
 }

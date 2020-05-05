@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "com112_file.h"
-#define n 15
+
 
 //Função para leitura do arquivo com112_entrada.txt e jogando os elementos lidos para um vetor
-void fileLeitura(int *V2){
+void fileLeitura(int *V2, int n){
     FILE *file;
     file = fopen("com112_entrada.txt", "r");
 
@@ -13,7 +13,7 @@ void fileLeitura(int *V2){
         getchar();
         exit(0);
     }
-
+    fscanf(file, "%d", &n);
     for(int i = 0; i < n; i++){
         fscanf(file, "%d", &V2[i]);
     }
@@ -61,7 +61,7 @@ void fileInsertion(double tempo, int n_compara, int n_movimento){
 }
 
 //Função para registrar os elementos gerados aleatóriamente no arquivo com112_entrada.txt e iniciando com112_relatorio.txt
-void fileEntrada(int *V){
+void fileEntrada(int *V, int n){
     FILE *file, *file2;
     file = fopen("com112_entrada.txt", "w");
     fprintf(file, "%d\n", n);
@@ -76,9 +76,10 @@ void fileEntrada(int *V){
 }
 
 //Função para registrar os elementos já ordenados no arquivo com112_saida.txt
-void fileSaida(int *V2){
+void fileSaida(int *V2, int n){
     FILE *file;
     file = fopen("com112_saida.txt", "w");
+    fprintf(file, "%d\n", n);
     for(int i = 0; i < n; i++){
         fprintf(file, "%d ", V2[i]);
     }
