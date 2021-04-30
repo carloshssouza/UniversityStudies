@@ -17,7 +17,7 @@ body {
   display: flex;
   background: linear-gradient(to right, rgb(37, 54, 110), rgb(99, 30, 99));
   justify-content: space-between;
-  padding: 2em;
+  padding: 1.5em 0 2em;
   height: 10px;
   width: 100%;
 }
@@ -48,6 +48,7 @@ a:hover {
   font-size: 25px;
   font-style: italic;
   color: white;
+  margin-left: 1em;
 }
 
 .perfil {
