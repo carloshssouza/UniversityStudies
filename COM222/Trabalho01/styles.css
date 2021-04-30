@@ -36,6 +36,12 @@ a {
   font-size: 20px;
   color: rgb(255, 211, 129);
   margin-right: 3em;
+  transition: 0.1s;
+}
+
+a:hover {
+  background-color: lightblue;
+  border-radius: 3px;
 }
 
 .nav-bar p {
@@ -46,8 +52,8 @@ a {
 
 .perfil {
   margin: 0;
-  height: 490px;
-  width: 460px;
+  height: 495px;
+  width: 495px;
   border-radius: 10px;
 }
 
@@ -105,10 +111,10 @@ h1 {
 }
 
 .hobbies {
-  position: absolute;
-  left: 25.5%;
   margin: 0;
   text-align: center;
+  margin-left: 33em;
+  width: 57.2%;
 }
 
 .content-hobbies {
@@ -121,7 +127,7 @@ h1 {
   padding: 2em;
   border-radius: 10px;
   text-align: center;
-  margin: 0 1em 0 1em;
+  margin: 0 3em 0 3em;
 }
 
 .item-hobbies p {
