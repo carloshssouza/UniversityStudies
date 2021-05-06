@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, rgb(1, 9, 36), rgb(44, 7, 44));
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+.nav {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  margin-right: 8%;
+}
+.logo {
+  display: flex;
+  flex: 1 1 auto;
+  margin-left: 10%;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.logo p {
+  margin-right: 10px;
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  font-style: italic;
+}
+
+p::first-letter {
+  color: tomato;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+img {
+  width: 20%;
+}
+
+.img-about {
+  border-radius: 50%;
+}
+a {
+  margin: 25px;
+  color: rgb(190, 158, 14);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+a:hover {
+  background: lightblue;
+  padding: 3px;
+  font-size: 32px;
+  border-radius: 10px;
+}
+.banner-area {
+  position: relative;
+  background-image: url(http://cdn30.us1.fansshare.com/image/coolwallpapers/cool-high-tech-wallpaper-hd-wallpapers-wallpaper-122680705.jpg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-area,
+.interesse-area,
+.hobbies-area,
+.contato-area {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+.text-part {
+  width: 65%;
+  height: 80%;
+}
+
+.text-part a {
+  background: transparent;
+}
+
+.text-part a:hover {
+  opacity: 0.5;
+}
+.about-area {
+  background-color: #000000;
+  color: white;
+}
+.interesse-area {
+  background-color: #0a051a;
+  color: rgb(255, 255, 255);
+}
+.hobbies-area {
+  background-color: #000000;
+  color: white;
+}
+
+.contato-area {
+  background-color: #0a051a;
+  color: #fff;
+}
+
+.content-hobbies {
+  display: flex;
+  justify-content: center;
+}
+
+.item-hobbies {
+  background: rgba(29, 15, 78, 0.486);
+  padding: 4em;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 3em 0 3em;
+}
+
+.item-hobbies p {
+  font-size: 24px;
+  margin-bottom: 1em;
+}
+
+.item-hobbies img {
+  height: 120px;
+  width: 140px;
+  border-radius: 10px;
+}

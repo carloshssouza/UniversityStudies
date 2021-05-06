@@ -1,0 +1,33 @@
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  max-height: 100vh;
+}
+
+.galeria img {
+  margin: 10px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  max-width: 25vw;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(126, 126, 126, 0.5);
+  padding: 1em;
+  border-radius: 10px;
+  max-width: 40em;
+}
+
+.text {
+  flex: 1;
+}
+
+.content img {
+  margin: 1em;
+  max-width: 25vw;
+  border-radius: 10px;
+}
