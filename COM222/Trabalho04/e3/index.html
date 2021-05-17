@@ -15,17 +15,12 @@
     </style>
   </head>
   <body>
-
-    <div class="container">
-        <form>
-            Digite um número <input type="text" id="first-input"/><br />
-            Digite um número <input type="text" id="second-input"/><br />
-            <button>Confirmar</button>
-        </form>
-
-        
-    </div>
-
+    <form id="my-form">
+      Digite um número <input type="number" id="first-input" required /><br />
+      Digite um número <input type="number" id="second-input" required /><br />
+      <input type="submit" />
+    </form>
+    <table id="table-area"></table>
 
     <script src="script.js"></script>
   </body>

@@ -1,8 +1,18 @@
-const btn = document.getElementById("btn");
+const myForm = document.getElementById("my-form");
 
-btn.addEventListener("click", (e) => {
+myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let salario = parseFloat(document.getElementById("salario").value);
+  const resultado = checkSalary(salario);
+
+  document.getElementById(
+    "resultado"
+  ).innerHTML = `O salário era ${salario}, recebeu um aumento de ${
+    resultado.aumento * 100
+  }% e agora é ${resultado.salarioAumento}`;
+});
+
+function checkSalary(salary) {
   let salarioAumento;
   let aumento;
   if (salario <= 280) {
@@ -19,9 +29,5 @@ btn.addEventListener("click", (e) => {
     salarioAumento = salario + salario * aumento;
   }
 
-  document.getElementById(
-    "resultado"
-  ).innerHTML = `O salário era ${salario}, recebeu um aumento de ${
-    aumento * 100
-  }% e agora é ${salarioAumento}`;
-});
+  return { salarioAumento, aumento };
+}
