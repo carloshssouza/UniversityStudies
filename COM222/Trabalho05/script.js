@@ -1,6 +1,7 @@
+//Formulario e checkbox
+
 const myForm = document.getElementById("registraUsuario");
 const checkbox = document.getElementsByName("linguagens");
-let user = new Object();
 
 for (let i = 0; i < checkbox.length; i++) {
   checkbox[i].addEventListener("click", () => {
@@ -8,8 +9,10 @@ for (let i = 0; i < checkbox.length; i++) {
   });
 }
 
+//Validação do formulário
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  let user = new Object();
   const nome = document.getElementsByName("firstName")[0].value;
   const idade = checkAge(
     parseInt(document.getElementsByName("lastName")[0].value)
@@ -28,6 +31,9 @@ myForm.addEventListener("submit", (e) => {
       linguagens: checkboxSelected,
       frequencia: radioSelected,
     };
+
+    console.log(user);
+
     myForm.submit();
     document.write(`
       Nome: ${user.nome}<br>
@@ -38,6 +44,8 @@ myForm.addEventListener("submit", (e) => {
     `);
   }
 });
+
+//Funções
 
 function checkName(name) {
   if (name.length === 0) {
@@ -63,7 +71,7 @@ function checkEmail(email) {
 }
 
 function checkRadio(radio) {
-  for (let i = 0; i < radio.length; i) {
+  for (let i = 0; i < radio.length; i++) {
     if (radio[i].checked) {
       return radio[i].value;
     }
