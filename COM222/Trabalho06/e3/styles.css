@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap");
+
+body {
+  background: rgb(179, 179, 179);
+}
+header {
+  display: flex;
+}
+
+header .button-zoom {
+  height: 50px;
+  width: 50px;
+  margin-left: 2em;
+  border: 0.5px solid black;
+}
+
+h1 {
+  font-family: Vast Shadow;
+  color: rgb(107, 29, 29);
+}
+
+#container-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgZoom50 {
+  height: 342px;
+  width: 256px;
+  border: 3px solid black;
+  box-shadow: 3px 3px;
+  margin: 1em;
+  background: linear-gradient(to right, rgb(119, 30, 30), rgb(161, 68, 31));
+}
+
+.imgZoom100 {
+  height: 392px;
+  width: 306px;
+  border: 3px solid black;
+  box-shadow: 3px 3px;
+  margin: 1em;
+  background: linear-gradient(to right, rgb(119, 30, 30), rgb(161, 68, 31));
+}
+
+.imgZoom150 {
+  height: 452px;
+  width: 356px;
+  border: 3px solid black;
+  box-shadow: 3px 3px;
+  margin: 1em;
+  background: linear-gradient(to right, rgb(119, 30, 30), rgb(161, 68, 31));
+}
+#container-images .img-anime {
+  height: 292px;
+  width: 206px;
+  border: 3px solid black;
+  box-shadow: 3px 3px;
+  margin: 1em;
+  background: linear-gradient(to right, rgb(119, 30, 30), rgb(161, 68, 31));
+}
