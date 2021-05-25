@@ -22,6 +22,8 @@ h1 {
 #container-images {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 70vw;
 }
 
 .imgZoom50 {
